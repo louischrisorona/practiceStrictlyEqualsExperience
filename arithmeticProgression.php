@@ -7,7 +7,11 @@ function findMissing($numbers) {
     
     while ( $n > 0 ) {
     
-      $testArith = $numbers[$n] - $numbers[$n-1];
+      $testArith = $numbers[$n] - $numbers[$n-1]; /* set the arithmetic difference for the first pair */
+        
+        /* the following loop checks the next pair of numbers to see if they match the arithmetic difference, if it does then it
+           will continue to the next set. If it does not match the arithmetic difference it is now set as the new difference. 
+           Then it will return the missing number */
 
       if ($testArith != $numbers[($n-1)] - $numbers[($n-2)]) {
         
