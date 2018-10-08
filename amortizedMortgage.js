@@ -32,8 +32,8 @@ function amortizedPayments(P, R, N){
   return schedule;
 }
 
-  const period = amortizedPayments(300000, 0.0625, 180); //evaluate the function into a variable to access output
+  const period = amortizedPayments(300000, 0.0625, 180); //save the function call to 'period' variable
   console.log(`Your payment will be $${period[0][0]}`)
   console.log(`Your interst varies, but 1st payment interest is $${period[1][1]}`)
   console.log(`Your principal pay down also varies, but on first payment is $${period[1][2]}`)
-console.log(period[120]) //show amortization schedule at payment 120:10th year
+console.log(period[120]) //show amortization schedule at payment 120, which is year 10
