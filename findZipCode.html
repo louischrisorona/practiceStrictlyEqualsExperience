@@ -47,7 +47,7 @@
         e.preventDefault();
 
         $.ajax({
-          url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent($("#address").val()) + "?&key=AIzaSyAZXv8fOwlAkzsFDLLDSQa7qVrmfNB__ao",
+          url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent($("#address").val()) + "?&key=<YOUR_API_KEY_HERE>",
           method: "GET",
           success: function(data){
 
