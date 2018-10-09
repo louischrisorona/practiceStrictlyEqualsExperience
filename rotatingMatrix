@@ -1,0 +1,28 @@
+/* a common interview problem I hear about
+   write an algorithm to 
+   rotate a square matrix N x N sides */
+
+/*I have implemented this to rotate a matrix of NxN sides clockwise(CW).
+ to achieve a Counter-clockwise(CCW): 1 CCW is equal to 3 CW rotations */
+
+function rotate(matrix, rotations) {
+	if(rotations == 4){return matrix} //dont need to run the algo if rotations result in the same matrix
+	let N = matrix.length;
+ 	let res; // initialize the result matrix
+	while(rotations > 0){ //this loop will keep track of the rotations
+		res = JSON.parse(JSON.stringify(matrix)); //assign a copy of the matrix into res variable
+	 	for (let x = 0; x < N; x++){ 
+	 		
+	 		for(let y = N - 1; y > -1; y--){ //we will iterate backwards through each element of the array
+
+	 			res[x][N-y-1] = matrix[y][x]; 
+        //this calculation and assignment handles the swapping of elements to create the illusion of rotation
+	 		}
+	 	} 
+	 	matrix = JSON.parse(JSON.stringify(res)); //we need to re-assign the matrix variable so that the while loop can continue rotating
+	 	rotations--;
+	}
+
+ 	return res;
+
+}
